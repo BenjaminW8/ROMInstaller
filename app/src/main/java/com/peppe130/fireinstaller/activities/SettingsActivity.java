@@ -84,6 +84,7 @@ public class SettingsActivity extends AppCompatActivity {
             Preference ROM_DEVELOPER = findPreference("rom_developer");
             Preference ROM_THEMER = findPreference("rom_themer");
             Preference ROM_THREAD = findPreference("rom_thread");
+            Preference APP_GITHUB = findPreference("app_github");
             Preference REVIEW_APP = findPreference("review_app");
             Preference ALL_MY_APPS = findPreference("all_my_apps");
 
@@ -206,6 +207,16 @@ public class SettingsActivity extends AppCompatActivity {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     ControlCenter.ROMThreadInfoAction();
+                    return false;
+                }
+            });
+
+            APP_GITHUB.setIcon(mGitHubIcon);
+            APP_GITHUB.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    Uri mUri = Uri.parse("https://github.com/BenjaminW8/ROMInstaller");
+                    startActivity(new Intent(Intent.ACTION_VIEW, mUri));
                     return false;
                 }
             });

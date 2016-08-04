@@ -139,7 +139,8 @@
     <string name="project_thread_title">Thread</string>
     <string name="project_thread_summary">See the project\'s thread</string>
     <string name="project_github_title">GitHub</string>
-    <string name="project_github_summary">See the App\'s project on GitHub</string>
+    <string name="project_github_summary">See the project on GitHub</string>
+    <string name="app_github_summary">See the App\'s code on GitHub</string>
     <string name="app_version">App version</string>
     <string name="rom_version">ROM version</string>
     <string name="rom_developer_title">App &amp; ROM developer</string>

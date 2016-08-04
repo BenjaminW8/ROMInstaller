@@ -106,15 +106,6 @@
         <item>3</item>
     </string-array>
 
-    <string-array name="set_viper">
-        <item>Yes\nI Will install Viper/Dolby Sound</item>
-        <item>No\nI Will keep the Sound Untouched</item>
-        </string-array>
-    <string-array name="set_viper_values">
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
     <string-array name="set_ui">
         <item>Stock SystemUI\nJust Stock No other Mods</item>
         <item>RoundedUI+MODS\nRoundedUi with MODS on FirePowerSettings</item>

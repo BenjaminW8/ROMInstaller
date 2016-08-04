@@ -78,6 +78,12 @@
             android:title="@string/rom_thread"
             android:summary="@string/tap_to_visit"/>
 
+        <Preference
+            android:key="app_github"
+            android:persistent="false"
+            android:title="@string/project_github_title"
+            android:summary="@string/app_github_summary"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory
