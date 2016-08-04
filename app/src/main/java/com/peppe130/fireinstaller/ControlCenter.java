@@ -37,7 +37,7 @@ public class ControlCenter {
 
     public static void DownloadROM() {
 
-        Utils.FILE_NAME = "FirePower5.zip";
+        Utils.FILE_NAME = "firepower5.zip";
 
         Uri mUri = Uri.parse("https://drive.google.com/file/d/0B2vn8-7g1lxFLTZTNFJ0bXM0LVk/view?pref=2&pli=1");
         Utils.ACTIVITY.startActivity(new Intent(Intent.ACTION_VIEW, mUri));
@@ -53,7 +53,9 @@ public class ControlCenter {
     }
 
     public static void ROMThemerInfoAction() {
-        // Do something
+        String[] mSocial = new String[] {"GitHub"};
+        String[] mLinks = new String[] {"https://github.com/mrhelloyellow/ROMInstaller"};
+        Utils.FollowMeDialog(mSocial, mLinks);
     }
 
     public static void ROMThreadInfoAction() {

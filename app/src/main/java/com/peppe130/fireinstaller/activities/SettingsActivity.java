@@ -221,6 +221,16 @@ public class SettingsActivity extends AppCompatActivity {
                 }
             });
 
+            APP_GITHUB.setIcon(mGitHubIcon);
+            APP_GITHUB.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    Uri mUri = Uri.parse("https://github.com/BenjaminW8/ROMInstaller");
+                    startActivity(new Intent(Intent.ACTION_VIEW, mUri));
+                    return false;
+                }
+            });
+
             REVIEW_APP.setIcon(mPlayStoreIcon);
             REVIEW_APP.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
