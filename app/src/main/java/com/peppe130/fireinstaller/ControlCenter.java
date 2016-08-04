@@ -16,14 +16,14 @@ import com.mikepenz.ionicons_typeface_library.Ionicons;
 public class ControlCenter {
 
     public static String[] DEVICE_COMPATIBILITY_LIST = new String[] {"SM-G930F","SM-G935F"};
-    public static String[] ROM_MD5_LIST = new String[] {"B3121939F200A146385BB935F68A04CC"};
+    public static String[] ROM_MD5_LIST = new String[] {"6FCBC7184ACBCDF282C844138F904ACF"};
     public static String[] RECOVERY_MD5_LIST = new String[] {"5fb732eea3d3e2b407fa7685c27a5354"};
 
-    public static Boolean TEST_MODE = true;
-    public static Boolean TRIAL_MODE = true;
+    public static Boolean TEST_MODE = false;
+    public static Boolean TRIAL_MODE = false;
     public static Boolean BUTTON_UI = true;
-    public static Boolean SHOULD_SHOW_SPLASH_SCREEN = false;
-    public static Boolean SHOULD_SHOW_DISCLAIMER_SCREEN = false;
+    public static Boolean SHOULD_SHOW_SPLASH_SCREEN = true;
+    public static Boolean SHOULD_SHOW_DISCLAIMER_SCREEN = true;
 
     public static Integer SPLASH_SCREEN_DELAY = 3000;
     public static Integer SPLASH_SCREEN_IMAGE = R.drawable.rom_logo_dark;
