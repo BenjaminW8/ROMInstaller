@@ -1,4 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <PreferenceCategory
+        android:title="Debloat options, what you don't want, don't select it">
+        <CheckBoxPreference
+            android:key="set_allshare"
+            android:defaultValue="false"
+            android:title="Allshare"
+            android:summary="@string/select_enable" />
+
+            android:title="">
+            <CheckBoxPreference
+                android:key="set_splanner"
+                android:defaultValue="false"
+                android:title="S Planner"
+                android:summary="@string/select_enable" />
+
+
+        <CheckBoxPreference
+            android:key="set_video"
+            android:defaultValue="false"
+            android:title="Video Editor"
+            android:summary="@string/select_enable" />
+
+
+        <CheckBoxPreference
+            android:key="set_game"
+            android:defaultValue="false"
+            android:title="Game Tools"
+            android:summary="@string/select_enable" />
+
+
+        <CheckBoxPreference
+            android:key="set_healt"
+            android:defaultValue="false"
+            android:title="Shealth"
+            android:summary="@string/select_enable" />
+
+
+        <CheckBoxPreference
+            android:key="set_theme"
+            android:defaultValue="false"
+            android:title="Theme Store"
+            android:summary="@string/select_enable" />
+
+        <CheckBoxPreference
+            android:key="set_voice"
+            android:defaultValue="false"
+            android:title="Voice Note"
+            android:summary="@string/select_enable" />
+
+
+        <CheckBoxPreference
+            android:key="set_smart"
+            android:defaultValue="false"
+            android:title="Smart Switch"
+            android:summary="@string/select_enable" />
+
+
+        <CheckBoxPreference
+            android:key="set_google"
+            android:defaultValue="false"
+            android:title="Google On Tap"
+            android:summary="@string/select_enable" />
+
+        <CheckBoxPreference
+            android:key="set_gear"
+            android:defaultValue="false"
+            android:title="Gear S/VR"
+            android:summary="@string/select_enable" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

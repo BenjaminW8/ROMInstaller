@@ -106,4 +106,63 @@
         <item>3</item>
     </string-array>
 
+    <string-array name="set_viper">
+        <item>Yes\nI Will install Viper/Dolby Sound</item>
+        <item>No\nI Will keep the Sound Untouched</item>
+        </string-array>
+    <string-array name="set_viper_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="set_ui">
+        <item>Stock SystemUI\nJust Stock No other Mods</item>
+        <item>RoundedUI+MODS\nRoundedUi with MODS on FirePowerSettings</item>
+        <item>RoundedUI+NEWORK\nRoundedUi with Network and Carriers in FirePowerSettings</item>
+    </string-array>
+    <string-array name="set_ui_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="set_touch">
+        <item>Stock Touchwiz\nNo,Give me Stock Touchwiz</item>
+        <item>Modded Touchwiz\nChoose Page Transitions with FirePower Settings</item>
+    </string-array>
+    <string-array name="set_touch_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="set_setting">
+        <item>Stock Touchwiz\nNo,Give me Stock Touchwiz</item>
+        <item>Modded Touchwiz\nChoose Page Transitions with FirePower Settings</item>
+    </string-array>
+    <string-array name="set_setting_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="set_boot">
+        <item>Stock Splash\nStock Samsung Boot Splash S7 Edge</item>
+        <item>Stock Splash\nStock Samsung Boot Splash S7 Flat</item>
+        <item>Exyfire Splash\nExyfire Boot Splash for EDGE</item>
+        <item>Exyfire Splash\nExyfire Boot Splash for FLAT</item>
+    </string-array>
+    <string-array name="set_boot_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="set_bootani">
+        <item>Stock Boot Animation\nNo,Give me Stock</item>
+        <item>Custom Boot Animation\nYeah,I want Custom</item>
+    </string-array>
+    <string-array name="set_bootani_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 </resources>

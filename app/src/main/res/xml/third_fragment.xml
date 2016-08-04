@@ -1,4 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <PreferenceCategory
+        android:title="Viper">
+        <CheckBoxPreference
+            android:key="set_viper"
+            android:defaultValue="false"
+            android:title="Do you want to install Viper/Dolby Sound"
+            android:summary="@string/select_enable" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="SystemUI ">
+        <ListPreference
+            android:title="Do you want Modded SystemUI or Stock SystemUI"
+            android:summary="@string/selected_item"
+            android:key="set_ui"
+            android:entries="@array/set_ui"
+            android:entryValues="@array/set_ui_values" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="TouchWiz ">
+        <ListPreference
+            android:title="Do you want Stock Touchwiz or Modded Touchwiz"
+            android:summary="@string/selected_item"
+            android:key="set_touch"
+            android:entries="@array/set_touch"
+            android:entryValues="@array/set_touch_values" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Settings ">
+        <ListPreference
+            android:title="Do you want Xposed &amp; Viper in Settings or you Want it Without"
+            android:summary="@string/selected_item"
+            android:key="set_setting"
+            android:entries="@array/set_setting"
+            android:entryValues="@array/set_setting_values" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="BootSplash ">
+        <ListPreference
+            android:title="Do you want Stock Splash or Exyfire Splash"
+            android:summary="@string/selected_item"
+            android:key="set_boot"
+            android:entries="@array/set_boot"
+            android:entryValues="@array/set_boot_values" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:title="Boot Animation ">
+        <ListPreference
+            android:title="Do you want Stock Boot Animations or Custom Animations"
+            android:summary="@string/selected_item"
+            android:key="set_bootani"
+            android:entries="@array/set_bootani"
+            android:entryValues="@array/set_bootani_values" />
+    </PreferenceCategory>
+
+
+
 </PreferenceScreen>
