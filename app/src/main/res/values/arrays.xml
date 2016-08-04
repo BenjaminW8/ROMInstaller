@@ -35,8 +35,8 @@
     </string-array>
 
     <string-array name="set_super">
-        <item>SM-G930F\nInstall build.prop for S7 flat</item>
-        <item>SM-G935F\nInstall build.prop for S7 Edge</item>
+        <item>Systemless\nSystemLess Install of Super-Su v2.76</item>
+        <item>SystemMode\nSystemMODE Install of Super-Su v2.74</item>
     </string-array>
     <string-array name="set_super_values">
         <item>1</item>
@@ -136,8 +136,8 @@
     </string-array>
 
     <string-array name="set_setting">
-        <item>Stock Touchwiz\nNo,Give me Stock Touchwiz</item>
-        <item>Modded Touchwiz\nChoose Page Transitions with FirePower Settings</item>
+        <item>Stock Settings\nJust Stock Settings without Xposed &amp; Viper</item>
+        <item>Modded Settings\nYes, Give me Xposed &amp; Viper in Settings</item>
     </string-array>
     <string-array name="set_setting_values">
         <item>1</item>
