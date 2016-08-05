@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         mFragmentPagerAdapter = new PagerAdapter(getSupportFragmentManager());
         mSmartTabLayout = (SmartTabLayout) findViewById(R.id.viewPagerIndicator);
         assert mSmartTabLayout != null;
-        mSmartTabLayout.setSelectedIndicatorColors(Utils.FetchAccentColor());
+        mSmartTabLayout.setSelectedIndicatorColors(ContextCompat.getColor(this, Utils.FetchAccentColor()));
         mSmartTabLayout.setIndicationInterpolator(SmartTabIndicationInterpolator.LINEAR);
 
         if (FragmentsCollector.mListFragment != null) {

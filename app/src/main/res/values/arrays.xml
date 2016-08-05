@@ -3,13 +3,11 @@
 
     <string-array name="wipe_data">
         <item>Full Wipe</item>
-        <item>Clean Install</item>
         <item>Dirty Flash</item>
     </string-array>
     <string-array name="wipe_data_values">
         <item>1</item>
         <item>2</item>
-        <item>3</item>
     </string-array>
 
     <string-array name="set_kernel">
@@ -83,7 +81,6 @@
     </string-array>
 
     <string-array name="set_dpi">
-        <item>500 DPI</item>
         <item>530 DPI</item>
         <item>540 DPI</item>
         <item>640 DPI</item>
@@ -92,7 +89,6 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
-        <item>4</item>
     </string-array>
 
     <string-array name="set_ani">
