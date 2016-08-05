@@ -7,10 +7,9 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-38dp"
+        android:paddingTop="5dp"
         android:background="@android:color/transparent"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/exy"/>
+        android:layout_alignParentTop="true" />
 
     <TextView
         android:id="@+id/textView"
@@ -20,8 +19,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:minHeight="48dp"
-        android:text="FirePower 5"
-        android:paddingBottom="16dip"
+        android:text="5"
+        android:paddingBottom="10dip"
         android:paddingLeft="?listPreferredItemPaddingLeft"
         android:paddingRight="?listPreferredItemPaddingRight"
         android:textAppearance="@style/TextAppearance.Welcome"

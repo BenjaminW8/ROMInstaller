@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.WindowManager;
 import java.io.IOException;
@@ -46,7 +47,7 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
 
         mProgress.setTitleText(Utils.ACTIVITY.getString(R.string.progress_dialog_title));
         mProgress.setContentText(Utils.ACTIVITY.getString(R.string.check_configuration));
-        mProgress.getProgressHelper().setBarColor(Utils.FetchAccentColor());
+        mProgress.getProgressHelper().setBarColor(ContextCompat.getColor(Utils.ACTIVITY, Utils.FetchAccentColor()));
         mProgress.setCancelable(false);
         mProgress.setCanceledOnTouchOutside(false);
         mProgress.setOnCancelListener(new DialogInterface.OnCancelListener() {
@@ -80,23 +81,29 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
 
         if (isDeviceCompatible) {
 
-            publishProgress(sbUpdate.append(Utils.ACTIVITY.getString(R.string.calculating_md5)).toString());
-
-            try {
-                mMD5 = Files.hash(Utils.ZIP_FILE, Hashing.md5()).toString();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            if ((Utils.ZIP_FILE.exists()) && Arrays.asList(ControlCenter.ROM_MD5_LIST).contains(mMD5.toUpperCase()) || Arrays.asList(ControlCenter.ROM_MD5_LIST).contains(mMD5.toLowerCase())) {
+            if (ControlCenter.TRIAL_MODE) {
+                updateResult((long) 2500, sbUpdate.append(Utils.ACTIVITY.getString(R.string.calculating_md5)).append(" (Fake)").toString());
                 updateResult((long) 5000, sbUpdate.append(Utils.ACTIVITY.getString(R.string.initializing_start)).toString());
                 return true;
+            } else {
+                publishProgress(sbUpdate.append(Utils.ACTIVITY.getString(R.string.calculating_md5)).toString());
+
+                try {
+                    mMD5 = Files.hash(Utils.ZIP_FILE, Hashing.md5()).toString();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                if ((Utils.ZIP_FILE.exists()) && (Arrays.asList(ControlCenter.ROM_MD5_LIST).contains(mMD5.toUpperCase()) || Arrays.asList(ControlCenter.ROM_MD5_LIST).contains(mMD5.toLowerCase()))) {
+                    updateResult((long) 5000, sbUpdate.append(Utils.ACTIVITY.getString(R.string.initializing_start)).toString());
+                    return true;
+                }
             }
 
         }

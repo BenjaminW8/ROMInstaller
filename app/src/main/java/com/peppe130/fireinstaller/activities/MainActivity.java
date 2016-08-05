@@ -56,12 +56,15 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_layout);
 
         Utils.ACTIVITY = this;
 
         SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         mEditor = SP.edit();
+
+        setTheme(SP.getInt("theme", 0) == 0 ? R.style.AppTheme_Light : R.style.AppTheme_Dark);
+
+        setContentView(R.layout.activity_main_layout);
 
         NEXT = (ImageButton) findViewById(R.id.next);
         BACK = (ImageButton) findViewById(R.id.back);
@@ -277,11 +280,23 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 mPosition = position;
                 mLatestPage = mFragmentPagerAdapter.getCount() - 1;
-                if (mViewPager.getCurrentItem() > 0) {
-                    setTitle(R.string.toolbar_title2);
-                } else {
-                    setTitle(R.string.app_name);
-                    BACK.setVisibility(View.GONE);
+                switch (mViewPager.getCurrentItem()) {
+                    case 1:
+                        setTitle(getString(R.string.toolbar_title2));
+                        break;
+                    case 2:
+                        setTitle(getString(R.string.toolbar_title3));
+                        break;
+                    case 3:
+                        setTitle(getString(R.string.toolbar_title4));
+                        break;
+                    case 4:
+                        setTitle(getString(R.string.toolbar_title5));
+                        break;
+                    default:
+                        setTitle(R.string.app_name);
+                        BACK.setVisibility(View.GONE);
+                        break;
                 }
                 if (mShouldShowToast && mLatestPage.equals(position)) {
                     if (!ControlCenter.BUTTON_UI) {

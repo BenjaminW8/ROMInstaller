@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Environment;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,17 +34,20 @@ public class AgreementActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agreement_layout);
 
         Utils.ACTIVITY = this;
 
         SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         mEditor = SP.edit();
 
+        setTheme(SP.getInt("theme", 0) == 0 ? R.style.AppTheme_Light : R.style.AppTheme_Dark);
+
+        setContentView(R.layout.activity_agreement_layout);
+
         AGREE = (Button) findViewById(R.id.agree);
         CLOSE = (Button) findViewById(R.id.close);
-        AGREE.setTextColor(Utils.FetchAccentColor());
-        CLOSE.setTextColor(Utils.FetchAccentColor());
+        AGREE.setTextColor(ContextCompat.getColor(this, Utils.FetchAccentColor()));
+        CLOSE.setTextColor(ContextCompat.getColor(this, Utils.FetchAccentColor()));
 
         mFirstTime = SP.getBoolean("first_time", true);
 
@@ -72,9 +76,13 @@ public class AgreementActivity extends AppCompatActivity {
                                             ControlCenter.BUTTON_UI = false;
                                             break;
                                     }
-                                    finish();
-                                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                                     startActivity(new Intent(AgreementActivity.this, MainActivity.class));
+                                    new Handler().postDelayed(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            finish();
+                                        }
+                                    }, 1000);
                                 }
                             })
                             .show();

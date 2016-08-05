@@ -8,6 +8,7 @@ import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.os.Handler;
+import android.support.v4.content.ContextCompat;
 import android.view.WindowManager;
 import java.io.File;
 import java.io.IOException;
@@ -61,7 +62,7 @@ public class FlashRecovery extends AsyncTask<String, String, Boolean> {
         mProgress = new SweetAlertDialog(Utils.ACTIVITY, SweetAlertDialog.PROGRESS_TYPE);
         mProgress.setTitleText(Utils.ACTIVITY.getString(R.string.download_recovery_progress_dialog_title));
         mProgress.setContentText(mContent);
-        mProgress.getProgressHelper().setBarColor(Utils.FetchAccentColor());
+        mProgress.getProgressHelper().setBarColor(ContextCompat.getColor(Utils.ACTIVITY, Utils.FetchAccentColor()));
         mProgress.setCancelable(false);
         mProgress.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override

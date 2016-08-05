@@ -1,8 +1,8 @@
 package com.peppe130.fireinstaller.activities;
 
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.content.pm.PackageManager;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.graphics.Color;
 import android.os.Environment;
 import android.os.Handler;
@@ -36,13 +36,19 @@ import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractDraggableItemView
 public class DownloadActivity extends AppCompatActivity implements CustomFileChooser.FileCallback {
 
     RecyclerView mRecyclerView;
+    SharedPreferences SP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_download_layout);
 
         Utils.ACTIVITY = this;
+
+        SP = PreferenceManager.getDefaultSharedPreferences(this);
+
+        setTheme(SP.getInt("theme", 0) == 0 ? R.style.AppTheme_Light : R.style.AppTheme_Dark);
+
+        setContentView(R.layout.activity_download_layout);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -62,7 +68,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
         public ViewHolder(View itemView) {
             super(itemView);
             mButton = (FancyButton) itemView.findViewById(R.id.button);
-            mButton.setBackgroundColor(Utils.FetchPrimaryColor());
+            mButton.setBackgroundColor(ContextCompat.getColor(Utils.ACTIVITY, Utils.FetchPrimaryColor()));
         }
 
     }
@@ -117,7 +123,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
                 public boolean onTouch(View view, MotionEvent motionEvent) {
                     switch (motionEvent.getAction()) {
                         case MotionEvent.ACTION_DOWN:
-                            holder.mButton.setBorderColor(ContextCompat.getColor(DownloadActivity.this, ButtonBorderColorChooser()));
+                            holder.mButton.setBorderColor(ContextCompat.getColor(DownloadActivity.this, Utils.FetchButtonBorderColor()));
                             break;
                         case MotionEvent.ACTION_UP:
                             holder.mButton.setBorderColor(0);
@@ -135,28 +141,6 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
         public int getItemCount() {
             return mItems.size();
         }
-
-    }
-
-    @Nullable
-    public Integer ButtonBorderColorChooser() {
-
-        Integer mTheme = null;
-
-        try {
-            mTheme = Utils.ACTIVITY.getPackageManager().getPackageInfo(Utils.ACTIVITY.getPackageName(), 0).applicationInfo.theme;
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        switch (mTheme) {
-            case R.style.AppTheme_Light:
-                return R.color.colorPrimaryDark_Theme_Light;
-            case R.style.AppTheme_Dark:
-                return R.color.colorAccent_Theme_Dark;
-        }
-
-        return null;
 
     }
 

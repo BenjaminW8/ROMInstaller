@@ -3,12 +3,13 @@ package com.peppe130.fireinstaller.activities;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Intent;
-import android.content.pm.PackageManager;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.content.ContextCompat;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -27,7 +28,8 @@ public class SplashScreenActivity extends Activity {
     RelativeLayout mRelativeLayout;
     BitmapFactory.Options mOptions;
     Boolean isActivityVisible = true;
-    Integer mHeaderColor, mTheme = null;
+    Integer mSplashScreenImage, mFetchHeaderColor, mHeaderColor;
+    SharedPreferences SP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,27 +40,23 @@ public class SplashScreenActivity extends Activity {
             mRelativeLayout = (RelativeLayout) findViewById(R.id.splash_screen_layout);
             mImageView = (ImageView) findViewById(R.id.imageView);
 
-            try {
-                mTheme = getPackageManager().getPackageInfo(getPackageName(), 0).applicationInfo.theme;
-            } catch (PackageManager.NameNotFoundException e) {
-                e.printStackTrace();
+            SP = PreferenceManager.getDefaultSharedPreferences(this);
+
+            if (SP.getInt("theme", 0) == 0) {
+                mFetchHeaderColor = R.color.colorPrimary_Theme_Light;
+                mSplashScreenImage = R.drawable.rom_logo_light;
+            } else {
+                mFetchHeaderColor = R.color.colorPrimary_Theme_Dark;
+                mSplashScreenImage = R.drawable.rom_logo_dark;
             }
 
-            switch (mTheme) {
-                case R.style.AppTheme_Light:
-                    mHeaderColor = ContextCompat.getColor(this, R.color.colorPrimary_Theme_Light);
-                    setTaskDescription(new ActivityManager.TaskDescription(null, null, mHeaderColor));
-                    break;
-                case R.style.AppTheme_Dark:
-                    mHeaderColor = ContextCompat.getColor(this, R.color.colorPrimary_Theme_Dark);
-                    setTaskDescription(new ActivityManager.TaskDescription(null, null, mHeaderColor));
-                    break;
-            }
+            mHeaderColor = ContextCompat.getColor(this, mFetchHeaderColor);
+            setTaskDescription(new ActivityManager.TaskDescription(null, null, mHeaderColor));
 
             mOptions = new BitmapFactory.Options();
             mOptions.inJustDecodeBounds = true;
-            BitmapFactory.decodeResource(getResources(), ControlCenter.SPLASH_SCREEN_IMAGE, mOptions);
-            mBitmap = decodeBitmapFromResource(getResources(), ControlCenter.SPLASH_SCREEN_IMAGE, 500, 500);
+            BitmapFactory.decodeResource(getResources(), mSplashScreenImage, mOptions);
+            mBitmap = decodeBitmapFromResource(getResources(), mSplashScreenImage, 500, 500);
 
             mColorArt = new ColorArt(mBitmap);
             mRelativeLayout.setBackgroundColor(mColorArt.getBackgroundColor());

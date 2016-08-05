@@ -14,6 +14,7 @@ import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
+import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.Toast;
 import java.io.BufferedWriter;
@@ -23,6 +24,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -95,6 +98,7 @@ public class Utils {
             mPreferences.remove("file_path");
             mPreferences.remove("first_time");
             mPreferences.remove("default_values");
+            mPreferences.remove("theme");
             for (Map.Entry<String,?> entry : mPreferences.entrySet()) {
                 mBufferedWriter.write(
                         entry.getKey() + "=" + entry.getValue().toString() + "\n"
@@ -117,6 +121,7 @@ public class Utils {
             mPreferences.remove("file_path");
             mPreferences.remove("first_time");
             mPreferences.remove("default_values");
+            mPreferences.remove("theme");
             for (Map.Entry<String,?> entry : mPreferences.entrySet()) {
                 mEditor.remove(entry.getKey()).apply();
             }
@@ -223,7 +228,11 @@ public class Utils {
                 .itemsCallback(new MaterialDialog.ListCallback() {
                     @Override
                     public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
-                        ACTIVITY.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(links[which])));
+                        try {
+                            ACTIVITY.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(links[which])));
+                        } catch (android.content.ActivityNotFoundException anfe) {
+                            Utils.ToastLong(Utils.ACTIVITY, "Can not find an application to perform this action.");
+                        }
                     }
                 })
                 .show();
@@ -246,23 +255,78 @@ public class Utils {
 
     }
 
-    public static int FetchPrimaryColor() {
+    @Nullable
+    public static Integer FetchPrimaryColor() {
 
-        TypedValue mTypedValue = new TypedValue();
-        TypedArray mTypedArray = ACTIVITY.obtainStyledAttributes(mTypedValue.data, new int[] {R.attr.colorPrimary});
-        int mColor = mTypedArray.getColor(0, 0);
-        mTypedArray.recycle();
-        return mColor;
+        Integer mTheme = null;
+
+        try {
+            Class<?> mClass = ContextThemeWrapper.class;
+            Method mMethod = mClass.getMethod("getThemeResId");
+            mMethod.setAccessible(true);
+            mTheme = (Integer) mMethod.invoke(Utils.ACTIVITY);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+
+        switch (mTheme) {
+            case R.style.AppTheme_Light:
+                return R.color.colorPrimary_Theme_Light;
+            case R.style.AppTheme_Dark:
+                return R.color.colorPrimary_Theme_Dark;
+        }
+
+        return null;
 
     }
 
-    public static int FetchAccentColor() {
+    @Nullable
+    public static Integer FetchAccentColor() {
 
-        TypedValue mTypedValue = new TypedValue();
-        TypedArray mTypedArray = ACTIVITY.obtainStyledAttributes(mTypedValue.data, new int[] {R.attr.colorAccent});
-        int mColor = mTypedArray.getColor(0, 0);
-        mTypedArray.recycle();
-        return mColor;
+        Integer mTheme = null;
+
+        try {
+            Class<?> mClass = ContextThemeWrapper.class;
+            Method mMethod = mClass.getMethod("getThemeResId");
+            mMethod.setAccessible(true);
+            mTheme = (Integer) mMethod.invoke(Utils.ACTIVITY);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+
+        switch (mTheme) {
+            case R.style.AppTheme_Light:
+                return R.color.colorAccent_Theme_Light;
+            case R.style.AppTheme_Dark:
+                return R.color.colorAccent_Theme_Dark;
+        }
+
+        return null;
+
+    }
+
+    @Nullable
+    public static Integer FetchButtonBorderColor() {
+
+        Integer mTheme = null;
+
+        try {
+            Class<?> mClass = ContextThemeWrapper.class;
+            Method mMethod = mClass.getMethod("getThemeResId");
+            mMethod.setAccessible(true);
+            mTheme = (Integer) mMethod.invoke(Utils.ACTIVITY);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+
+        switch (mTheme) {
+            case R.style.AppTheme_Light:
+                return R.color.downloadCenterButtonBorderColor_Theme_Light;
+            case R.style.AppTheme_Dark:
+                return R.color.downloadCenterButtonBorderColor_Theme_Dark;
+        }
+
+        return null;
 
     }
 
@@ -272,8 +336,11 @@ public class Utils {
         Integer mTheme = null;
 
         try {
-            mTheme = Utils.ACTIVITY.getPackageManager().getPackageInfo(Utils.ACTIVITY.getPackageName(), 0).applicationInfo.theme;
-        } catch (PackageManager.NameNotFoundException e) {
+            Class<?> mClass = ContextThemeWrapper.class;
+            Method mMethod = mClass.getMethod("getThemeResId");
+            mMethod.setAccessible(true);
+            mTheme = (Integer) mMethod.invoke(Utils.ACTIVITY);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | IllegalArgumentException e) {
             e.printStackTrace();
         }
 
@@ -282,6 +349,31 @@ public class Utils {
                 return R.color.colorBackground_Theme_Light;
             case R.style.AppTheme_Dark:
                 return R.color.colorBackground_Theme_Dark;
+        }
+
+        return null;
+
+    }
+
+    @Nullable
+    public static Integer IconColorChooser() {
+
+        Integer mTheme = null;
+
+        try {
+            Class<?> mClass = ContextThemeWrapper.class;
+            Method mMethod = mClass.getMethod("getThemeResId");
+            mMethod.setAccessible(true);
+            mTheme = (Integer) mMethod.invoke(Utils.ACTIVITY);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+
+        switch (mTheme) {
+            case R.style.AppTheme_Light:
+                return R.color.preferenceIconColor_Theme_Light;
+            case R.style.AppTheme_Dark:
+                return R.color.preferenceIconColor_Theme_Dark;
         }
 
         return null;

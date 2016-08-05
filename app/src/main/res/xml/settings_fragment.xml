@@ -10,6 +10,12 @@
             android:title="@string/activity_download_center"
             android:summary="@string/download_center_summary"/>
 
+        <Preference
+            android:key="theme_chooser"
+            android:persistent="false"
+            android:title="@string/theme_chooser_title"
+            android:summary="@string/theme_chooser_summary"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory

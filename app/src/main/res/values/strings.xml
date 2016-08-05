@@ -134,6 +134,10 @@
     <string name="activity_download_center">Download Center</string>
     <string name="download_center_summary">Download add-ons/features</string>
     <string name="no_downloads_available">No downloads available</string>
+    <string name="theme_chooser_title">Theme</string>
+    <string name="theme_chooser_summary">Change the App theme</string>
+    <string name="light_theme">Light theme</string>
+    <string name="dark_theme">Dark theme</string>
     <string name="project_version">Project version</string>
     <string name="project_developer_title">Project developer</string>
     <string name="project_developer_summary">Giuseppe Montuoro</string>

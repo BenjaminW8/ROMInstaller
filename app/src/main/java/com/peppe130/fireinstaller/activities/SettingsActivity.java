@@ -1,9 +1,7 @@
 package com.peppe130.fireinstaller.activities;
 
-import android.support.annotation.Nullable;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -12,12 +10,14 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import java.io.File;
 
 import com.peppe130.fireinstaller.R;
 import com.peppe130.fireinstaller.BuildConfig;
 import com.peppe130.fireinstaller.core.Utils;
 import com.peppe130.fireinstaller.ControlCenter;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.entypo_typeface_library.Entypo;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
@@ -27,16 +27,21 @@ import com.mikepenz.iconics.IconicsDrawable;
 @SuppressWarnings("ResultOfMethodCallIgnored, ConstantConditions")
 public class SettingsActivity extends AppCompatActivity {
 
-    SharedPreferences SP;
+    public static SharedPreferences SP;
+    public static SharedPreferences.Editor mEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings_layout);
 
         Utils.ACTIVITY = this;
 
         SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        mEditor = SP.edit();
+
+        setTheme(SP.getInt("theme", 0) == 0 ? R.style.AppTheme_Light : R.style.AppTheme_Dark);
+
+        setContentView(R.layout.activity_settings_layout);
 
         getFragmentManager().beginTransaction()
                 .replace(R.id.frame_layout, new SettingsPreferencesFragment())
@@ -74,6 +79,7 @@ public class SettingsActivity extends AppCompatActivity {
             addPreferencesFromResource(R.xml.settings_fragment);
 
             Preference DOWNLOAD_CENTER = findPreference("download_center");
+            Preference THEME_CHOOSER = findPreference("theme_chooser");
             Preference PROJECT_BUILD_NUMBER = findPreference("project_build_number");
             Preference APP_BUILD_NUMBER = findPreference("app_build_number");
             Preference PROJECT_DEVELOPER = findPreference("project_developer");
@@ -88,10 +94,15 @@ public class SettingsActivity extends AppCompatActivity {
             Preference REVIEW_APP = findPreference("review_app");
             Preference ALL_MY_APPS = findPreference("all_my_apps");
 
-            Integer mIconColor = ContextCompat.getColor(getActivity(), IconColorChooser());
+            Integer mIconColor = ContextCompat.getColor(getActivity(), Utils.IconColorChooser());
 
             IconicsDrawable mDownloadCenterIcon = new IconicsDrawable(getActivity())
                     .icon(Entypo.Icon.ent_download)
+                    .color(mIconColor)
+                    .sizeDp(40);
+
+            IconicsDrawable mThemeChooserIcon = new IconicsDrawable(getActivity())
+                    .icon(CommunityMaterial.Icon.cmd_theme_light_dark)
                     .color(mIconColor)
                     .sizeDp(40);
 
@@ -134,6 +145,28 @@ public class SettingsActivity extends AppCompatActivity {
                 }
             });
 
+            THEME_CHOOSER.setIcon(mThemeChooserIcon);
+            final String[] mString = new String[] {getActivity().getString(R.string.light_theme), getActivity().getString(R.string.dark_theme)};
+            THEME_CHOOSER.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    new MaterialDialog.Builder(getActivity())
+                            .items(mString)
+                            .itemsCallback(new MaterialDialog.ListCallback() {
+                                @Override
+                                public void onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
+                                    mEditor.putInt("theme", which).apply();
+                                    mEditor.putBoolean("default_values", false).apply();
+                                    getActivity().finishAffinity();
+                                    getActivity().startActivity(new Intent(getActivity(), SplashScreenActivity.class));
+                                    getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                                }
+                            })
+                            .show();
+                    return false;
+                }
+            });
+
             PROJECT_BUILD_NUMBER.setIcon(mInfoIcon);
             PROJECT_BUILD_NUMBER.setSummary(Double.toString(BuildConfig.projectVersion));
 
@@ -164,7 +197,11 @@ public class SettingsActivity extends AppCompatActivity {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     Uri mUri = Uri.parse("http://forum.xda-developers.com/android/apps-games/app-rom-installer-to-flash-custom-rom-t3430099");
-                    startActivity(new Intent(Intent.ACTION_VIEW, mUri));
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW, mUri));
+                    } catch (android.content.ActivityNotFoundException anfe) {
+                        Utils.ToastLong(Utils.ACTIVITY, "Can not find an application to perform this action.");
+                    }
                     return false;
                 }
             });
@@ -174,7 +211,11 @@ public class SettingsActivity extends AppCompatActivity {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     Uri mUri = Uri.parse("https://github.com/peppe130/ROMInstaller");
-                    startActivity(new Intent(Intent.ACTION_VIEW, mUri));
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW, mUri));
+                    } catch (android.content.ActivityNotFoundException anfe) {
+                        Utils.ToastLong(Utils.ACTIVITY, "Can not find an application to perform this action.");
+                    }
                     return false;
                 }
             });
@@ -216,7 +257,11 @@ public class SettingsActivity extends AppCompatActivity {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     Uri mUri = Uri.parse("https://github.com/BenjaminW8/ROMInstaller");
-                    startActivity(new Intent(Intent.ACTION_VIEW, mUri));
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW, mUri));
+                    } catch (android.content.ActivityNotFoundException anfe) {
+                        Utils.ToastLong(Utils.ACTIVITY, "Can not find an application to perform this action.");
+                    }
                     return false;
                 }
             });
@@ -226,7 +271,11 @@ public class SettingsActivity extends AppCompatActivity {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     Uri mUri = Uri.parse("https://github.com/BenjaminW8/ROMInstaller");
-                    startActivity(new Intent(Intent.ACTION_VIEW, mUri));
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW, mUri));
+                    } catch (android.content.ActivityNotFoundException anfe) {
+                        Utils.ToastLong(Utils.ACTIVITY, "Can not find an application to perform this action.");
+                    }
                     return false;
                 }
             });
@@ -256,28 +305,6 @@ public class SettingsActivity extends AppCompatActivity {
                     return false;
                 }
             });
-
-        }
-
-        @Nullable
-        public static Integer IconColorChooser() {
-
-            Integer mTheme = null;
-
-            try {
-                mTheme = Utils.ACTIVITY.getPackageManager().getPackageInfo(Utils.ACTIVITY.getPackageName(), 0).applicationInfo.theme;
-            } catch (PackageManager.NameNotFoundException e) {
-                e.printStackTrace();
-            }
-
-            switch (mTheme) {
-                case R.style.AppTheme_Light:
-                    return R.color.colorPrimary_Theme_Light;
-                case R.style.AppTheme_Dark:
-                    return android.R.color.white;
-            }
-
-            return null;
 
         }
 

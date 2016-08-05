@@ -47,7 +47,7 @@
         <item>Yes\nXposed V85.1(stable) will be installed.</item>
         <item>No\nXposed won\'t be installed.</item>
         <item>Yes\nXposed v85.7 SYSTEMLESS will be installed</item>
-        <item>Yes\nXposed V86.2 UnOffcial SystLess will be installed</item>
+        <item>Yes\nXposed V86.2 UnOfficial SystemLess will be installed</item>
     </string-array>
     <string-array name="set_xposed_values">
         <item>1</item>

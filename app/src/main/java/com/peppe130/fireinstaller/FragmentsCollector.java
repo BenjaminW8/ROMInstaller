@@ -1,11 +1,15 @@
 package com.peppe130.fireinstaller;
 
+import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.preference.XpPreferenceFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import org.sufficientlysecure.htmltextview.HtmlRemoteImageGetter;
 import org.sufficientlysecure.htmltextview.HtmlTextView;
@@ -40,6 +44,9 @@ public class FragmentsCollector {
             HtmlTextView mHtmlTextView = (HtmlTextView) getView().findViewById(R.id.htmlWelcome);
             assert mHtmlTextView != null;
             mHtmlTextView.setHtml(R.raw.welcome, new HtmlRemoteImageGetter(mHtmlTextView));
+            ImageView mImageView = (ImageView) getView().findViewById(R.id.imageView);
+            SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            mImageView.setImageResource(SP.getInt("theme", 0) == 0 ? R.drawable.exylight : R.drawable.exydark);
         }
 
         @Override

@@ -8,6 +8,8 @@
     <color name="colorBackground.Theme.Light">#dcffffff</color>
     <color name="textPrimaryColor.Theme.Light">@android:color/holo_blue_dark</color>
     <color name="textSecondaryColor.Theme.Light">@android:color/holo_red_dark</color>
+    <color name="downloadCenterButtonBorderColor.Theme.Light">#8f7040</color>
+    <color name="preferenceIconColor.Theme.Light">#af8e5b</color>
 
     <!-- App Theme Dark -->
     <color name="colorPrimary.Theme.Dark">#000000</color>
@@ -16,6 +18,8 @@
     <color name="colorBackground.Theme.Dark">#000000</color>
     <color name="textPrimaryColor.Theme.Dark">@android:color/holo_orange_dark</color>
     <color name="textSecondaryColor.Theme.Dark">@android:color/holo_orange_light</color>
+    <color name="downloadCenterButtonBorderColor.Theme.Dark">#FF5722</color>
+    <color name="preferenceIconColor.Theme.Dark">@android:color/white</color>
 
     <!-- SmartTabLayout colors -->
     <color name="icon_enabled">@android:color/holo_orange_light</color>
