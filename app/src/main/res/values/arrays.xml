@@ -105,12 +105,10 @@
     <string-array name="set_ui">
         <item>Stock SystemUI\nJust Stock No other Mods</item>
         <item>RoundedUI+MODS\nRoundedUi with MODS on FirePowerSettings</item>
-        <item>RoundedUI+NEWORK\nRoundedUi with Network and Carriers in FirePowerSettings</item>
     </string-array>
     <string-array name="set_ui_values">
         <item>1</item>
         <item>2</item>
-        <item>3</item>
     </string-array>
 
     <string-array name="set_touch">

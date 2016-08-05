@@ -16,10 +16,10 @@ import com.mikepenz.ionicons_typeface_library.Ionicons;
 public class ControlCenter {
 
     public static String[] DEVICE_COMPATIBILITY_LIST = new String[] {"SM-G930F","SM-G935F"};
-    public static String[] ROM_MD5_LIST = new String[] {"3091C3AE091CE3302FBF8B8496696CAF"};
+    public static String[] ROM_MD5_LIST = new String[] {"3091C3AE091CE3302FBF8B8496696CAF","e3be34dff523bab48312e74154b800d7"};
     public static String[] RECOVERY_MD5_LIST = new String[] {"5fb732eea3d3e2b407fa7685c27a5354"};
 
-    public static Boolean TEST_MODE = true;
+    public static Boolean TEST_MODE = false;
     public static Boolean TRIAL_MODE = false;
     public static Boolean BUTTON_UI = true;
     public static Boolean SHOULD_SHOW_SPLASH_SCREEN = true;
