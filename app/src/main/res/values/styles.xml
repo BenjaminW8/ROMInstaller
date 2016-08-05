@@ -96,6 +96,7 @@
         <item name="colorAccent">@color/colorAccent.Theme.Light</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textAppearanceMedium">@style/TextAppearance.AppCompat.Subhead</item>
+        <item name="android:windowBackground">@android:color/holo_blue_light</item>
         <item name="android:textAppearanceMediumInverse">@style/TextAppearance.AppCompat.Subhead.Inverse</item>
 
     </style>
@@ -104,6 +105,7 @@
 
         <item name="colorAccent">@color/colorAccent.Theme.Dark</item>
         <item name="android:textColor">@android:color/black</item>
+        <item name="android:windowBackground">@android:color/holo_red_light</item>
         <item name="android:textAppearanceMedium">@style/TextAppearance.AppCompat.Subhead</item>
         <item name="android:textAppearanceMediumInverse">@style/TextAppearance.AppCompat.Subhead.Inverse</item>
 
@@ -113,6 +115,7 @@
 
         <item name="colorAccent">@color/colorAccent.Theme.Dark</item>
         <item name="android:textColor">@android:color/black</item>
+        <item name="android:windowBackground">@android:color/darker_gray</item>
         <item name="android:textAppearanceMedium">@style/TextAppearance.AppCompat.Subhead</item>
         <item name="android:textAppearanceMediumInverse">@style/TextAppearance.AppCompat.Subhead.Inverse</item>
 

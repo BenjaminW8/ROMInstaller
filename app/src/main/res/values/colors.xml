@@ -2,35 +2,35 @@
 <resources>
 
     <!-- App Theme Light -->
-    <color name="colorPrimary.Theme.Light">#af8e5b</color>
-    <color name="colorPrimaryDark.Theme.Light">#8f7040</color>
-    <color name="colorAccent.Theme.Light">#af8e4b</color>
-    <color name="colorBackground.Theme.Light">#f7f7f7</color>
-    <color name="textPrimaryColor.Theme.Light">@android:color/black</color>
-    <color name="textSecondaryColor.Theme.Light">@android:color/black</color>
+    <color name="colorPrimary.Theme.Light">#006891</color>
+    <color name="colorPrimaryDark.Theme.Light">#0078a7</color>
+    <color name="colorAccent.Theme.Light">#b9ad94</color>
+    <color name="colorBackground.Theme.Light">#dcffffff</color>
+    <color name="textPrimaryColor.Theme.Light">@android:color/holo_blue_dark</color>
+    <color name="textSecondaryColor.Theme.Light">@android:color/holo_red_dark</color>
 
     <!-- App Theme Dark -->
-    <color name="colorPrimary.Theme.Dark">#2e4d50</color>
-    <color name="colorPrimaryDark.Theme.Dark">#1c3c3f</color>
-    <color name="colorAccent.Theme.Dark">#FF5722</color>
-    <color name="colorBackground.Theme.Dark">#ff1a292c</color>
-    <color name="textPrimaryColor.Theme.Dark">@android:color/white</color>
-    <color name="textSecondaryColor.Theme.Dark">@android:color/white</color>
+    <color name="colorPrimary.Theme.Dark">#000000</color>
+    <color name="colorPrimaryDark.Theme.Dark">#000000</color>
+    <color name="colorAccent.Theme.Dark">#ff4a10</color>
+    <color name="colorBackground.Theme.Dark">#000000</color>
+    <color name="textPrimaryColor.Theme.Dark">@android:color/holo_orange_dark</color>
+    <color name="textSecondaryColor.Theme.Dark">@android:color/holo_orange_light</color>
 
     <!-- SmartTabLayout colors -->
-    <color name="icon_enabled">@android:color/white</color>
+    <color name="icon_enabled">@android:color/holo_orange_light</color>
     <color name="icon_disabled">#FF63727B</color>
 
     <!-- SweetAlertDialog colors -->
     <color name="float_transparent">#00000000</color>
-    <color name="sweet_dialog_bg_color">#FFFFFF</color>
-    <color name="button_text_color">#FFFFFF</color>
-    <color name="gray_btn_bg_color">#bfbfbf</color>
-    <color name="gray_btn_bg_pressed_color">#bfbfbf</color>
+    <color name="sweet_dialog_bg_color">#f2e4d7</color>
+    <color name="button_text_color">#363232</color>
+    <color name="gray_btn_bg_color">#4b4847</color>
+    <color name="gray_btn_bg_pressed_color">#003b7b</color>
     <color name="blue_btn_bg_color">#84d8ff</color>
     <color name="blue_btn_bg_pressed_color">#84d8ff</color>
     <color name="red_btn_bg_color">#FF5722</color>
-    <color name="red_btn_bg_pressed_color">#FF5722</color>
+    <color name="red_btn_bg_pressed_color">#53504f</color>
     <color name="error_stroke_color">#FF5722</color>
     <color name="success_stroke_color">#A5DC86</color>
     <color name="trans_success_stroke_color">#33A5DC86</color>

@@ -1,7 +1,10 @@
 <resources>
 
     <string name="app_name">FirePower ROM Installer</string>
-    <string name="toolbar_title2">Preferences</string>
+    <string name="toolbar_title2">Select Kernel &amp; Device</string>
+    <string name="toolbar_title3">Choose Xposed &amp; Dpi</string>
+    <string name="toolbar_title4">Choose SystemUI &amp; Settings</string>
+    <string name="toolbar_title5">Debloat</string>
     <string name="rom_name">FirePowerROM</string>
     <string name="rom_folder">FirePowerROM/Download</string>
     <string name="choose_sample_file">Choose \"SampleROM.zip\" file under FirePowerROM/Download</string>
