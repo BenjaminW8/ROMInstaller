@@ -13,8 +13,8 @@
     <string-array name="set_kernel">
         <item>SM-G93XF Jesse Kernel\nJesse Kernel v1.1.2 for S7 Flat &amp; S7 Edge</item>
         <item>SM-G93XF Jesse Kernel\nJesse Kernel v1.3   for S7 flat &amp; S7 Edge</item>
-        <item>SM-G930F Super Kernel\nSuper Kernel v1.5.5 with Synapse Support for S7 flat</item>
-        <item>SM-G935F Super Kernel\nSuper Kernel v1.5.5 with Synapse Support for S7 Edge</item>
+        <item>SM-G930F Super Kernel\nSuper Kernel v1.5.5 (It can give Random Reboot</item>
+        <item>SM-G935F Super Kernel\nSuper Kernel v1.5.5 (It can give Random Reboot)</item>
     </string-array>
     <string-array name="set_kernel_values">
         <item>1</item>
