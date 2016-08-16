@@ -2,13 +2,14 @@
 <!--suppress AndroidElementNotAllowed -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <PreferenceCategory
         android:title="Wipe Data">
         <ListPreference
             android:title="Wipe data"
             android:summary="@string/selected_item"
             android:key="wipe_data"
-            android:defaultValue="1"
+            android:defaultValue=""
             android:entries="@array/wipe_data"
             android:entryValues="@array/wipe_data_values" />
     </PreferenceCategory>
@@ -19,6 +20,7 @@
             android:title="Select here you Kernel you like to use!!"
             android:summary="@string/selected_item"
             android:key="set_kernel"
+            android:defaultValue=""
             android:entries="@array/set_kernel"
             android:entryValues="@array/set_kernel_values" />
     </PreferenceCategory>
