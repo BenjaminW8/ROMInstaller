@@ -16,7 +16,7 @@ import com.mikepenz.ionicons_typeface_library.Ionicons;
 public class ControlCenter {
 
     public static String[] DEVICE_COMPATIBILITY_LIST = new String[] {"SM-G930F","SM-G935F"};
-    public static String[] ROM_MD5_LIST = new String[] {"33AE89AB47E2DDA9D54658B9FDD1D41E","165C319C0F5EDF356C1D8D57EFEA9A34"};
+    public static String[] ROM_MD5_LIST = new String[] {"33AE89AB47E2DDA9D54658B9FDD1D41E","29DEC7891002ABB9EB8174A6CFE0D197"};
     public static String[] RECOVERY_MD5_LIST = new String[] {"5fb732eea3d3e2b407fa7685c27a5354"};
 
     public static Boolean TEST_MODE = false;
