@@ -16,11 +16,11 @@ import com.mikepenz.ionicons_typeface_library.Ionicons;
 public class ControlCenter {
 
     public static String[] DEVICE_COMPATIBILITY_LIST = new String[] {"SM-G930F","SM-G935F"};
-    public static String[] ROM_MD5_LIST = new String[] {"33AE89AB47E2DDA9D54658B9FDD1D41E","29DEC7891002ABB9EB8174A6CFE0D197"};
+    public static String[] ROM_MD5_LIST = new String[] {"33AE89AB47E2DDA9D54658B9FDD1D41E","29DEC7891002ABB9EB8174A6CFE0D197","106E9FB4F47391A07F6B1F0DCA8EC168"};
     public static String[] RECOVERY_MD5_LIST = new String[] {"5fb732eea3d3e2b407fa7685c27a5354"};
 
     public static Boolean TEST_MODE = false;
-    public static Boolean TRIAL_MODE = false;
+    public static Boolean TRIAL_MODE = true;
     public static Boolean BUTTON_UI = true;
     public static Boolean SHOULD_SHOW_SPLASH_SCREEN = true;
     public static Boolean SHOULD_SHOW_DISCLAIMER_SCREEN = true;
@@ -36,10 +36,10 @@ public class ControlCenter {
 
     public static void DownloadROM() {
 
-        Utils.FILE_NAME = "firepower6.zip";
+        Utils.FILE_NAME = "firepower7.zip";
 
         Utils.StartDownloadROM(
-                "http://exyfirerom.com/r/firepower6.zip",
+                "http://exyfirerom.com/r/firepower7.zip",
                 Utils.ACTIVITY.getString(R.string.rom_folder));
 
     }

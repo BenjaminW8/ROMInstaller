@@ -42,15 +42,5 @@
             android:entryValues="@array/set_dpi_values" />
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:title="Animations">
-        <ListPreference
-            android:title="Choose Default,0.5x and 0.25x Animations"
-            android:summary="@string/selected_item"
-            android:key="set_ani"
-            android:entries="@array/set_ani"
-            android:entryValues="@array/set_ani_values" />
-    </PreferenceCategory>
-
 
 </PreferenceScreen>

@@ -2,25 +2,32 @@
 <resources>
 
     <string-array name="wipe_data">
-        <item>Full Wipe</item>
+        <item>Full Wipe\nBut Leaves necessary folders for Flashing Rom Intact</item>
+        <item>Full Wipe\nDeletes everything (you have been warned!)</item>
         <item>Dirty Flash</item>
+
     </string-array>
     <string-array name="wipe_data_values">
         <item>1</item>
         <item>2</item>
+        <item>3</item>
     </string-array>
 
     <string-array name="set_kernel">
         <item>SM-G93XF Jesse Kernel\nJesse Kernel v1.1.2 for S7 Flat &amp; S7 Edge</item>
         <item>SM-G93XF Jesse Kernel\nJesse Kernel v1.3   for S7 flat &amp; S7 Edge</item>
-        <item>SM-G930F Super Kernel\nSuper Kernel v1.2 For Flat</item>
-        <item>SM-G935F Super Kernel\nSuper Kernel v1.2 For Edge</item>
+        <item>SM-G930F Super Kernel\nStock Kernel v1.3 For Flat</item>
+        <item>SM-G935F Super Kernel\nStock Kernel v1.3 For Edge</item>
+        <item>SM-G930F Stock Kernel\nStock Kernel For Flat</item>
+        <item>SM-G935F Stock Kernel\nStock Kernel For Edge</item>
     </string-array>
     <string-array name="set_kernel_values">
         <item>1</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
+        <item>5</item>
+        <item>6</item>
     </string-array>
 
     <string-array name="set_build">
@@ -91,16 +98,6 @@
         <item>3</item>
     </string-array>
 
-    <string-array name="set_ani">
-        <item>Default\nGive Me Default Animations</item>
-        <item>0.5x\nGive Me 0.5x Animations</item>
-        <item>0.25x\nGive Me 0.25x Animations</item>
-    </string-array>
-    <string-array name="set_ani_values">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
 
     <string-array name="set_ui">
         <item>Stock SystemUI\nJust Stock No other Mods</item>
