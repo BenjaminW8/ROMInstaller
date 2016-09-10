@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Debloat options, what you don't want, don't select it">
+        <CheckBoxPreference
+            android:key="set_allshare"
+            android:defaultValue="false"
+            android:title="Allshare"
+            android:summary="@string/select_install" />
+
+        android:title="">
+        <CheckBoxPreference
+            android:key="set_splanner"
+            android:defaultValue="false"
+            android:title="S Planner"
+            android:summary="@string/select_install" />
+
+
+        <CheckBoxPreference
+            android:key="set_video"
+            android:defaultValue="false"
+            android:title="Video Editor"
+            android:summary="@string/select_install" />
+
+
+        <CheckBoxPreference
+            android:key="set_game"
+            android:defaultValue="false"
+            android:title="Game Tools"
+            android:summary="@string/select_install" />
+
+
+        <CheckBoxPreference
+            android:key="set_health"
+            android:defaultValue="false"
+            android:title="Shealth"
+            android:summary="@string/select_install" />
+
+
+        <CheckBoxPreference
+            android:key="set_theme"
+            android:defaultValue="false"
+            android:title="Theme Store"
+            android:summary="@string/select_install" />
+
+        <CheckBoxPreference
+            android:key="set_voice"
+            android:defaultValue="false"
+            android:title="Voice Note"
+            android:summary="@string/select_install" />
+
+
+        <CheckBoxPreference
+            android:key="set_smart"
+            android:defaultValue="false"
+            android:title="Smart Switch"
+            android:summary="@string/select_install" />
+
+
+        <CheckBoxPreference
+            android:key="set_google"
+            android:defaultValue="false"
+            android:title="Google On Tap"
+            android:summary="@string/select_install" />
+
+        <CheckBoxPreference
+            android:key="set_gear"
+            android:defaultValue="false"
+            android:title="Gear S/VR"
+            android:summary="@string/select_install" />
+
+        <CheckBoxPreference
+            android:key="set_browser"
+            android:defaultValue="false"
+            android:title="Sbrowser"
+            android:summary="@string/select_install" />
+
+        <CheckBoxPreference
+            android:key="set_chrome"
+            android:defaultValue="false"
+            android:title="Google Chrome"
+            android:summary="@string/select_install" />
+
+        <CheckBoxPreference
+            android:key="set_cnn"
+            android:defaultValue="false"
+            android:title="Cnn Panel"
+            android:summary="@string/select_install" />
+
+
+        <CheckBoxPreference
+            android:key="set_galaxy"
+            android:defaultValue="false"
+            android:title="Samsung Galaxy Apps"
+            android:summary="@string/select_install" />
+
+        <CheckBoxPreference
+            android:key="set_gmail"
+            android:defaultValue="false"
+            android:title="Google Mail"
+            android:summary="@string/select_install" />
+
+        <CheckBoxPreference
+            android:key="set_maps"
+            android:defaultValue="false"
+            android:title="Google Maps"
+            android:summary="@string/select_install" />
+
+        <CheckBoxPreference
+            android:key="set_photos"
+            android:defaultValue="false"
+            android:title="Google Photos"
+            android:summary="@string/select_install" />
+
+        <CheckBoxPreference
+            android:key="set_places"
+            android:defaultValue="false"
+            android:title="Places"
+            android:summary="@string/select_install" />
+
+        <CheckBoxPreference
+            android:key="set_weather"
+            android:defaultValue="false"
+            android:title="Weather"
+            android:summary="@string/select_install" />
+
+        <CheckBoxPreference
+            android:key="set_youtube"
+            android:defaultValue="false"
+            android:title="Youtube"
+            android:summary="@string/select_install" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

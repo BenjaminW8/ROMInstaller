@@ -13,6 +13,15 @@
         <item>3</item>
     </string-array>
 
+    <string-array name="set_install">
+        <item>Full Wipe\nSelect this if you choosed Full Wipe </item>
+        <item>Dirty Install\nSelect this if you choosed Dirty Flash</item>
+    </string-array>
+    <string-array name="set_install_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <string-array name="set_kernel">
         <item>SM-G93XF Jesse Kernel\nJesse Kernel v1.1.2 for S7 Flat &amp; S7 Edge</item>
         <item>SM-G93XF Jesse Kernel\nJesse Kernel v1.3   for S7 flat &amp; S7 Edge</item>
@@ -33,26 +42,34 @@
     <string-array name="set_build">
         <item>SM-G930F</item>
         <item>SM-G935F</item>
+        <item>SM-G935FD</item>
+        <item>SM-G935W8</item>
+        <item>SM-G930FD</item>
     </string-array>
     <string-array name="set_build_values">
         <item>1</item>
         <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
     </string-array>
 
     <string-array name="set_super">
         <item>Systemless\nSystemLess Install of Super-Su v2.76</item>
         <item>SystemMode\nSystemMODE Install of Super-Su v2.74</item>
+        <item>Magisk\nSystemLess Install of Magisk Super-Su v2.76</item>
     </string-array>
     <string-array name="set_super_values">
         <item>1</item>
         <item>2</item>
+        <item>3</item>
     </string-array>
 
     <string-array name="set_xposed">
-        <item>Yes\nXposed V85.1(stable) will be installed.</item>
+        <item>Yes\nXposed V86.5 systemless Magisk Version will be installed.</item>
         <item>No\nXposed won\'t be installed.</item>
         <item>Yes\nXposed v85.7 SYSTEMLESS will be installed</item>
-        <item>Yes\nXposed V86.2 UnOfficial SystemLess will be installed</item>
+        <item>Yes\nXposed V86.2 Stable UnOfficial SystemLess will be installed</item>
     </string-array>
     <string-array name="set_xposed_values">
         <item>1</item>
@@ -104,6 +121,15 @@
         <item>RoundedUI+MODS\nRoundedUi with MODS on FirePowerSettings</item>
     </string-array>
     <string-array name="set_ui_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="set_viper">
+        <item>Viper &amp; Dolby 4.8\nStable Viper/Dolby Sound</item>
+        <item>Viper &amp; Dolby 5.5 \nExperimental Viper Dolby Sound </item>
+    </string-array>
+    <string-array name="set_viper_values">
         <item>1</item>
         <item>2</item>
     </string-array>

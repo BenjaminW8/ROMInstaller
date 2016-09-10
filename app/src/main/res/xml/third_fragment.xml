@@ -3,11 +3,13 @@
 
     <PreferenceCategory
         android:title="Viper">
-        <CheckBoxPreference
+        <ListPreference
             android:key="set_viper"
-            android:defaultValue="false"
-            android:title="Do you want to install Viper/Dolby Sound"
-            android:summary="@string/select_enable" />
+            android:summary="@string/selected_item"
+            android:defaultValue=""
+            android:entries="@array/set_viper"
+            android:entryValues="@array/set_viper_values"
+            android:title="Select Your Viper &amp; Dolby Sound Mod" />
     </PreferenceCategory>
 
     <PreferenceCategory
