@@ -7,5 +7,5 @@
 
 
 
-![Screenshots](http://i.imgur.com/6iIPzDd.jpg)
+![Screenshots](http://exyfirerom.com/r/fireinstaller-white.jpg)
 
